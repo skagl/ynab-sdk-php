@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-swagger-codegen generate -i "./YNAB-SDK-PHP/swagger.json" \
-    -l "php" \
-    -c "./YNAB-SDK-PHP/generate/swagger-config-php.json" \
-    --ignore-file-override="./YNAB-SDK-PHP/.swagger-codegen-ignore" \
-    --git-repo-id="ynab-sdk-php" \
-    --git-user-id="jorijn" \
+openapi-generator generate \
+    -i "spec-v1-swagger.json" \
+    -g "php" \
+    -c "./generate/openapi-generator-config.json" \
     --http-user-agent="YNAB-SDK-PHP"
