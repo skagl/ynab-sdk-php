@@ -161,4 +161,11 @@ class UpdateTransactionTest extends TestCase
     public function testPropertyImportId()
     {
     }
+
+    /**
+     * Test attribute "subtransactions"
+     */
+    public function testPropertySubtransactions()
+    {
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SubTransaction
+ * SaveSubTransaction
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \YNAB\ObjectSerializer;
 
 /**
- * SubTransaction Class Doc Comment
+ * SaveSubTransaction Class Doc Comment
  *
  * @category Class
  * @package  YNAB
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class SubTransaction implements ModelInterface, ArrayAccess
+class SaveSubTransaction implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SubTransaction implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'SubTransaction';
+    protected static $openAPIModelName = 'SaveSubTransaction';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,11 @@ class SubTransaction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'transactionId' => 'string',
         'amount' => 'int',
-        'memo' => 'string',
         'payeeId' => 'string',
         'payeeName' => 'string',
         'categoryId' => 'string',
-        'categoryName' => 'string',
-        'transferAccountId' => 'string',
-        'deleted' => 'bool'
+        'memo' => 'string'
     ];
 
     /**
@@ -75,16 +70,11 @@ class SubTransaction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'transactionId' => null,
         'amount' => 'int64',
-        'memo' => null,
         'payeeId' => 'uuid',
         'payeeName' => null,
         'categoryId' => 'uuid',
-        'categoryName' => null,
-        'transferAccountId' => 'uuid',
-        'deleted' => null
+        'memo' => null
     ];
 
     /**
@@ -114,16 +104,11 @@ class SubTransaction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'transactionId' => 'transaction_id',
         'amount' => 'amount',
-        'memo' => 'memo',
         'payeeId' => 'payee_id',
         'payeeName' => 'payee_name',
         'categoryId' => 'category_id',
-        'categoryName' => 'category_name',
-        'transferAccountId' => 'transfer_account_id',
-        'deleted' => 'deleted'
+        'memo' => 'memo'
     ];
 
     /**
@@ -132,16 +117,11 @@ class SubTransaction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'transactionId' => 'setTransactionId',
         'amount' => 'setAmount',
-        'memo' => 'setMemo',
         'payeeId' => 'setPayeeId',
         'payeeName' => 'setPayeeName',
         'categoryId' => 'setCategoryId',
-        'categoryName' => 'setCategoryName',
-        'transferAccountId' => 'setTransferAccountId',
-        'deleted' => 'setDeleted'
+        'memo' => 'setMemo'
     ];
 
     /**
@@ -150,16 +130,11 @@ class SubTransaction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'transactionId' => 'getTransactionId',
         'amount' => 'getAmount',
-        'memo' => 'getMemo',
         'payeeId' => 'getPayeeId',
         'payeeName' => 'getPayeeName',
         'categoryId' => 'getCategoryId',
-        'categoryName' => 'getCategoryName',
-        'transferAccountId' => 'getTransferAccountId',
-        'deleted' => 'getDeleted'
+        'memo' => 'getMemo'
     ];
 
     /**
@@ -222,16 +197,11 @@ class SubTransaction implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['transactionId'] = isset($data['transactionId']) ? $data['transactionId'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['memo'] = isset($data['memo']) ? $data['memo'] : null;
         $this->container['payeeId'] = isset($data['payeeId']) ? $data['payeeId'] : null;
         $this->container['payeeName'] = isset($data['payeeName']) ? $data['payeeName'] : null;
         $this->container['categoryId'] = isset($data['categoryId']) ? $data['categoryId'] : null;
-        $this->container['categoryName'] = isset($data['categoryName']) ? $data['categoryName'] : null;
-        $this->container['transferAccountId'] = isset($data['transferAccountId']) ? $data['transferAccountId'] : null;
-        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['memo'] = isset($data['memo']) ? $data['memo'] : null;
     }
 
     /**
@@ -243,18 +213,17 @@ class SubTransaction implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['transactionId'] === null) {
-            $invalidProperties[] = "'transactionId' can't be null";
-        }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if ($this->container['deleted'] === null) {
-            $invalidProperties[] = "'deleted' can't be null";
+        if (!is_null($this->container['payeeName']) && (mb_strlen($this->container['payeeName']) > 50)) {
+            $invalidProperties[] = "invalid value for 'payeeName', the character length must be smaller than or equal to 50.";
         }
+
+        if (!is_null($this->container['memo']) && (mb_strlen($this->container['memo']) > 200)) {
+            $invalidProperties[] = "invalid value for 'memo', the character length must be smaller than or equal to 200.";
+        }
+
         return $invalidProperties;
     }
 
@@ -271,54 +240,6 @@ class SubTransaction implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets transactionId
-     *
-     * @return string
-     */
-    public function getTransactionId()
-    {
-        return $this->container['transactionId'];
-    }
-
-    /**
-     * Sets transactionId
-     *
-     * @param string $transactionId transactionId
-     *
-     * @return $this
-     */
-    public function setTransactionId($transactionId)
-    {
-        $this->container['transactionId'] = $transactionId;
-
-        return $this;
-    }
-
-    /**
      * Gets amount
      *
      * @return int
@@ -331,37 +252,13 @@ class SubTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param int $amount The subtransaction amount in milliunits format
+     * @param int $amount The sub-transaction amount in milliunits format.
      *
      * @return $this
      */
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets memo
-     *
-     * @return string|null
-     */
-    public function getMemo()
-    {
-        return $this->container['memo'];
-    }
-
-    /**
-     * Sets memo
-     *
-     * @param string|null $memo memo
-     *
-     * @return $this
-     */
-    public function setMemo($memo)
-    {
-        $this->container['memo'] = $memo;
 
         return $this;
     }
@@ -379,7 +276,7 @@ class SubTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets payeeId
      *
-     * @param string|null $payeeId payeeId
+     * @param string|null $payeeId The payee for the sub-transaction.  Transfer payees are not allowed.
      *
      * @return $this
      */
@@ -403,12 +300,16 @@ class SubTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets payeeName
      *
-     * @param string|null $payeeName payeeName
+     * @param string|null $payeeName The payee name.  If a payee_name value is provided and payee_id has a null value, the payee_name value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.
      *
      * @return $this
      */
     public function setPayeeName($payeeName)
     {
+        if (!is_null($payeeName) && (mb_strlen($payeeName) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $payeeName when calling SaveSubTransaction., must be smaller than or equal to 50.');
+        }
+
         $this->container['payeeName'] = $payeeName;
 
         return $this;
@@ -427,7 +328,7 @@ class SubTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets categoryId
      *
-     * @param string|null $categoryId categoryId
+     * @param string|null $categoryId The category for the sub-transaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.
      *
      * @return $this
      */
@@ -439,73 +340,29 @@ class SubTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets categoryName
+     * Gets memo
      *
      * @return string|null
      */
-    public function getCategoryName()
+    public function getMemo()
     {
-        return $this->container['categoryName'];
+        return $this->container['memo'];
     }
 
     /**
-     * Sets categoryName
+     * Sets memo
      *
-     * @param string|null $categoryName categoryName
+     * @param string|null $memo memo
      *
      * @return $this
      */
-    public function setCategoryName($categoryName)
+    public function setMemo($memo)
     {
-        $this->container['categoryName'] = $categoryName;
+        if (!is_null($memo) && (mb_strlen($memo) > 200)) {
+            throw new \InvalidArgumentException('invalid length for $memo when calling SaveSubTransaction., must be smaller than or equal to 200.');
+        }
 
-        return $this;
-    }
-
-    /**
-     * Gets transferAccountId
-     *
-     * @return string|null
-     */
-    public function getTransferAccountId()
-    {
-        return $this->container['transferAccountId'];
-    }
-
-    /**
-     * Sets transferAccountId
-     *
-     * @param string|null $transferAccountId If a transfer, the account_id which the subtransaction transfers to
-     *
-     * @return $this
-     */
-    public function setTransferAccountId($transferAccountId)
-    {
-        $this->container['transferAccountId'] = $transferAccountId;
-
-        return $this;
-    }
-
-    /**
-     * Gets deleted
-     *
-     * @return bool
-     */
-    public function getDeleted()
-    {
-        return $this->container['deleted'];
-    }
-
-    /**
-     * Sets deleted
-     *
-     * @param bool $deleted Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests.
-     *
-     * @return $this
-     */
-    public function setDeleted($deleted)
-    {
-        $this->container['deleted'] = $deleted;
+        $this->container['memo'] = $memo;
 
         return $this;
     }

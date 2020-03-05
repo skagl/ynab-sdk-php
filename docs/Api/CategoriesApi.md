@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 Update a category for a specific month
 
-Update a category for a specific month
+Update a category for a specific month.  Only 'budgeted' amount can be updated currently.
 
 ### Example
 
@@ -238,7 +238,7 @@ $apiInstance = new YNAB\Api\CategoriesApi(
 $budgetId = 'budgetId_example'; // string | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 $month = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 $categoryId = 'categoryId_example'; // string | The id of the category
-$data = new \YNAB\Model\SaveMonthCategoryWrapper(); // \YNAB\Model\SaveMonthCategoryWrapper | The category to update
+$data = new \YNAB\Model\SaveMonthCategoryWrapper(); // \YNAB\Model\SaveMonthCategoryWrapper | The category to update.  Only 'budgeted' amount can currently be updated and any other fields specified will be ignored.
 
 try {
     $result = $apiInstance->updateMonthCategory($budgetId, $month, $categoryId, $data);
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
  **budgetId** | **string**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) |
  **month** | **\DateTime**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
  **categoryId** | **string**| The id of the category |
- **data** | [**\YNAB\Model\SaveMonthCategoryWrapper**](../Model/SaveMonthCategoryWrapper.md)| The category to update |
+ **data** | [**\YNAB\Model\SaveMonthCategoryWrapper**](../Model/SaveMonthCategoryWrapper.md)| The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. |
 
 ### Return type
 

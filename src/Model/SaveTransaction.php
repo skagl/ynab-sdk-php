@@ -67,7 +67,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         'cleared' => 'string',
         'approved' => 'bool',
         'flagColor' => 'string',
-        'importId' => 'string'
+        'importId' => 'string',
+        'subtransactions' => '\YNAB\Model\SaveSubTransaction[]'
     ];
 
     /**
@@ -86,7 +87,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         'cleared' => null,
         'approved' => null,
         'flagColor' => null,
-        'importId' => null
+        'importId' => null,
+        'subtransactions' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         'cleared' => 'cleared',
         'approved' => 'approved',
         'flagColor' => 'flag_color',
-        'importId' => 'import_id'
+        'importId' => 'import_id',
+        'subtransactions' => 'subtransactions'
     ];
 
     /**
@@ -145,7 +148,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         'cleared' => 'setCleared',
         'approved' => 'setApproved',
         'flagColor' => 'setFlagColor',
-        'importId' => 'setImportId'
+        'importId' => 'setImportId',
+        'subtransactions' => 'setSubtransactions'
     ];
 
     /**
@@ -164,7 +168,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         'cleared' => 'getCleared',
         'approved' => 'getApproved',
         'flagColor' => 'getFlagColor',
-        'importId' => 'getImportId'
+        'importId' => 'getImportId',
+        'subtransactions' => 'getSubtransactions'
     ];
 
     /**
@@ -278,6 +283,7 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
         $this->container['flagColor'] = isset($data['flagColor']) ? $data['flagColor'] : null;
         $this->container['importId'] = isset($data['importId']) ? $data['importId'] : null;
+        $this->container['subtransactions'] = isset($data['subtransactions']) ? $data['subtransactions'] : null;
     }
 
     /**
@@ -631,6 +637,30 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         }
 
         $this->container['importId'] = $importId;
+
+        return $this;
+    }
+
+    /**
+     * Gets subtransactions
+     *
+     * @return \YNAB\Model\SaveSubTransaction[]|null
+     */
+    public function getSubtransactions()
+    {
+        return $this->container['subtransactions'];
+    }
+
+    /**
+     * Sets subtransactions
+     *
+     * @param \YNAB\Model\SaveSubTransaction[]|null $subtransactions An array of sub-transactions to configure a new transaction as a split.  Updating `subtransactions` on an existing split transaction is not supported.  If `subtransactions` array is specified for an existing transaction, it will be ignored.
+     *
+     * @return $this
+     */
+    public function setSubtransactions($subtransactions)
+    {
+        $this->container['subtransactions'] = $subtransactions;
 
         return $this;
     }

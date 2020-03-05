@@ -1,6 +1,6 @@
 <?php
 /**
- * CategoryGroupTest
+ * SaveSubTransactionTest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ namespace YNAB;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CategoryGroupTest Class Doc Comment
+ * SaveSubTransactionTest Class Doc Comment
  *
  * @category    Class
- * @description CategoryGroup
+ * @description SaveSubTransaction
  * @package     YNAB
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CategoryGroupTest extends TestCase
+class SaveSubTransactionTest extends TestCase
 {
 
     /**
@@ -72,37 +72,44 @@ class CategoryGroupTest extends TestCase
     }
 
     /**
-     * Test "CategoryGroup"
+     * Test "SaveSubTransaction"
      */
-    public function testCategoryGroup()
+    public function testSaveSubTransaction()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "amount"
      */
-    public function testPropertyId()
+    public function testPropertyAmount()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "payeeId"
      */
-    public function testPropertyName()
+    public function testPropertyPayeeId()
     {
     }
 
     /**
-     * Test attribute "hidden"
+     * Test attribute "payeeName"
      */
-    public function testPropertyHidden()
+    public function testPropertyPayeeName()
     {
     }
 
     /**
-     * Test attribute "deleted"
+     * Test attribute "categoryId"
      */
-    public function testPropertyDeleted()
+    public function testPropertyCategoryId()
+    {
+    }
+
+    /**
+     * Test attribute "memo"
+     */
+    public function testPropertyMemo()
     {
     }
 }

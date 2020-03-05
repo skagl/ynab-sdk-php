@@ -1140,7 +1140,7 @@ class CategoriesApi
      * @param  string $budgetId The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
      * @param  string $categoryId The id of the category (required)
-     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update (required)
+     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. (required)
      *
      * @throws \YNAB\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1160,7 +1160,7 @@ class CategoriesApi
      * @param  string $budgetId The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
      * @param  string $categoryId The id of the category (required)
-     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update (required)
+     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. (required)
      *
      * @throws \YNAB\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1271,7 +1271,7 @@ class CategoriesApi
      * @param  string $budgetId The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
      * @param  string $categoryId The id of the category (required)
-     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update (required)
+     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1294,7 +1294,7 @@ class CategoriesApi
      * @param  string $budgetId The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
      * @param  string $categoryId The id of the category (required)
-     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update (required)
+     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1344,7 +1344,7 @@ class CategoriesApi
      * @param  string $budgetId The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
      * @param  string $categoryId The id of the category (required)
-     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update (required)
+     * @param  \YNAB\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#39;budgeted&#39; amount can currently be updated and any other fields specified will be ignored. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
