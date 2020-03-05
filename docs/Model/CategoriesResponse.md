@@ -1,10 +1,11 @@
-# CategoriesResponse
+# # CategoriesResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\YNAB\Model\CategoryGroupsWrapper**](CategoryGroupsWrapper.md) |  | 
+**data** | [**\YNAB\Model\CategoriesResponseData**](CategoriesResponseData.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -1,10 +1,11 @@
-# ScheduledTransactionsResponse
+# # ScheduledTransactionsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\YNAB\Model\ScheduledTransactionsWrapper**](ScheduledTransactionsWrapper.md) |  | 
+**data** | [**\YNAB\Model\ScheduledTransactionsResponseData**](ScheduledTransactionsResponseData.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

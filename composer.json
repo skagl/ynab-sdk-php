@@ -1,5 +1,5 @@
 {
-  "name": "danielpieper/ynab-sdk-php",
+  "name": "skagl/ynab-sdk-php",
   "version": "1.2.0",
   "description": "(non-official) YNAB API PHP Library",
   "keywords": [

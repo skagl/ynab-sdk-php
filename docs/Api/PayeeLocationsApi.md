@@ -9,7 +9,9 @@ Method | HTTP request | Description
 [**getPayeeLocationsByPayee**](PayeeLocationsApi.md#getPayeeLocationsByPayee) | **GET** /budgets/{budget_id}/payees/{payee_id}/payee_locations | List locations for a payee
 
 
-# **getPayeeLocationById**
+
+## getPayeeLocationById
+
 > \YNAB\Model\PayeeLocationResponse getPayeeLocationById($budgetId, $payeeLocationId)
 
 Single payee location
@@ -17,14 +19,17 @@ Single payee location
 Returns a single payee location
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 // Configure API key authorization: bearer
 $config = YNAB\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = YNAB\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new YNAB\Api\PayeeLocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -32,8 +37,8 @@ $apiInstance = new YNAB\Api\PayeeLocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budgetId = "budgetId_example"; // string | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-$payeeLocationId = "payeeLocationId_example"; // string | ID of payee location
+$budgetId = 'budgetId_example'; // string | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+$payeeLocationId = 'payeeLocationId_example'; // string | id of payee location
 
 try {
     $result = $apiInstance->getPayeeLocationById($budgetId, $payeeLocationId);
@@ -46,10 +51,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budgetId** | [**string**](../Model/.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. |
- **payeeLocationId** | [**string**](../Model/.md)| ID of payee location |
+ **budgetId** | **string**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) |
+ **payeeLocationId** | **string**| id of payee location |
 
 ### Return type
 
@@ -61,12 +67,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **getPayeeLocations**
+
+## getPayeeLocations
+
 > \YNAB\Model\PayeeLocationsResponse getPayeeLocations($budgetId)
 
 List payee locations
@@ -74,14 +84,17 @@ List payee locations
 Returns all payee locations
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 // Configure API key authorization: bearer
 $config = YNAB\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = YNAB\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new YNAB\Api\PayeeLocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -89,7 +102,7 @@ $apiInstance = new YNAB\Api\PayeeLocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budgetId = "budgetId_example"; // string | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+$budgetId = 'budgetId_example'; // string | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 
 try {
     $result = $apiInstance->getPayeeLocations($budgetId);
@@ -102,9 +115,10 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budgetId** | [**string**](../Model/.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. |
+ **budgetId** | **string**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) |
 
 ### Return type
 
@@ -116,12 +130,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **getPayeeLocationsByPayee**
+
+## getPayeeLocationsByPayee
+
 > \YNAB\Model\PayeeLocationsResponse getPayeeLocationsByPayee($budgetId, $payeeId)
 
 List locations for a payee
@@ -129,14 +147,17 @@ List locations for a payee
 Returns all payee locations for the specified payee
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 // Configure API key authorization: bearer
 $config = YNAB\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = YNAB\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
 
 $apiInstance = new YNAB\Api\PayeeLocationsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -144,8 +165,8 @@ $apiInstance = new YNAB\Api\PayeeLocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budgetId = "budgetId_example"; // string | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-$payeeId = "payeeId_example"; // string | ID of payee
+$budgetId = 'budgetId_example'; // string | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+$payeeId = 'payeeId_example'; // string | id of payee
 
 try {
     $result = $apiInstance->getPayeeLocationsByPayee($budgetId, $payeeId);
@@ -158,10 +179,11 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budgetId** | [**string**](../Model/.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. |
- **payeeId** | [**string**](../Model/.md)| ID of payee |
+ **budgetId** | **string**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) |
+ **payeeId** | **string**| id of payee |
 
 ### Return type
 
@@ -173,8 +195,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
